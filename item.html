@@ -1,0 +1,93 @@
+<html>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+    <script>
+        
+ let typeSelect = [];
+
+
+
+
+  
+
+
+function compareType(type){
+const i = typeSelect.findIndex(e => e === type);
+if (i > -1) {
+  /* vendors contains the element we're looking for, at index "i" */
+  console.log("type is at index " + i)
+  console.log("removed " + type )
+  typeSelect.splice(i, 1)
+}else{
+    if(typeSelect.length < 2){
+    console.log("added " + type )
+    typeSelect.push(type)
+    }
+    else if (typeSelect.length == 2){
+        typeSelect.splice(0, 1)
+        typeSelect.splice(0, 1)
+        typeSelect.push(type)
+    }
+}
+}
+
+
+function appendItems(){
+    $('#appender').html('')
+    $('#appender2').html('')
+
+    $('#appender').append(typeSelect[0])
+    $('#appender2').append(typeSelect[1])
+}
+
+
+  function myFunction(type)
+  {
+    compareType(type)
+
+    appendItems()
+  }
+
+
+
+
+
+
+    </script>
+What Are you Battling.
+
+<div onclick="myFunction('Normal')">Normal</div>
+<div onclick="myFunction('Fighting')">Fighting</div>
+<div onclick="myFunction('Flying')">Flying</div>
+
+<div onclick="myFunction('Poison')">Poison</div>
+<div onclick="myFunction('Ground')">Ground</div>
+<div onclick="myFunction('Rock')">Rock</div>
+
+<div onclick="myFunction('Bug')">Bug</div>
+<div onclick="myFunction('Ghost')">Ghost</div>
+<div onclick="myFunction('Steel')">Steel</div>
+
+<div onclick="myFunction('Fire')">Fire</div>
+<div onclick="myFunction('water')">Water</div>
+<div onclick="myFunction('Grass')">Grass</div>
+
+<div onclick="myFunction('Electric')">Electric</div>
+<div onclick="myFunction('Psychic')">Psychic</div>
+<div onclick="myFunction('Ice')">Ice</div>
+
+<div onclick="myFunction('Dragon')">Dragon</div>
+<div onclick="myFunction('Dark')">Dark</div>
+<div onclick="myFunction('Fairy')">Fairy</div>
+
+
+
+
+<br>
+
+ <span id="appender"></span> :  <span id="appender2"></span>
+
+</html>
+
